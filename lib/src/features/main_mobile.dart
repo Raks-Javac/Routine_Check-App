@@ -7,16 +7,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 
-class ProviderMobileApp extends StatefulWidget {
+class ProviderMobileApp extends StatelessWidget {
   final List<SingleChildWidget> multiProvider;
   // ignore: use_key_in_widget_constructors
   const ProviderMobileApp(this.multiProvider);
 
-  @override
-  _ProviderMobileAppState createState() => _ProviderMobileAppState();
-}
-
-class _ProviderMobileAppState extends State<ProviderMobileApp> {
   @override
   Widget build(BuildContext context) {
     //removed the splash_screen once this widget builds on screen

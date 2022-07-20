@@ -1,5 +1,5 @@
 import 'dart:io' show Platform;
-import 'package:estate_project/src/features/first_screen/presentation/first_screen.dart';
+import 'package:estate_project/src/features/splash_onboarding/presentation/splash_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'route.dart';
