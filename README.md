@@ -1,3 +1,3 @@
-# architect_flutter_network_services 
+# Routine Check App
 
-a flutter project demonstrating a couple of tips on how to make api calls the right way
+a  A simple rotine checker app made with dart(Flutter framework)
