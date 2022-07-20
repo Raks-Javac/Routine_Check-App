@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:estate_project/src/core/utils/functions.dart';
+import 'package:estate_project/src/utils/functions.dart';
 
 class Logging extends Interceptor {
   @override

@@ -1,8 +1,3 @@
-import 'dart:ui';
-
-import 'package:flutter/material.dart';
-
-class ConstantsStore {}
 
 // stores strings
 class StringsStore {
@@ -33,23 +28,4 @@ class StringsStore {
 
   static const String invalidPhoneNumberField =
       "Number provided isn't valid.Try another phone number";
-}
-
-//stores image constants
-class ImageStore {}
-
-//stores colors and all other
-class ColorsTexStyleStore {
-  static const Color kTriviaLightBlack = Color(0xFF222222);
-  static const Color kTriviaYellow = Colors.yellow;
-  static const Color kTriviaLightYellow = Color(0xFFF7E8AB);
-  static Color kTriviaScaffoldBackground = Colors.grey.shade200;
-  static const Color kTriviaLightGrey = Color(0xFFF1F3F4);
-  static const Color deepGrey = Color(0xFFC4C4C4);
-  static const Color kTriviaDarkGrey = Color(0xFFEAEAEA);
-  static const Color kTriviaWhiteColor = Colors.white;
-  static const Color kAppMainColor = Colors.green;
-  static const Color kTriviaBlack = Colors.black;
-  static const Color kTriviaRed = Color(0xFFB80016);
-  static const Color kTriviaTransparentColor = Colors.transparent;
 }

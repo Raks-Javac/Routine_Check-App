@@ -1,4 +1,4 @@
-import 'package:estate_project/src/core/utils/styles.dart';
+import 'package:estate_project/src/shared/res/res.dart';
 import 'package:flutter/material.dart';
 
 class Loader extends StatelessWidget {
@@ -7,19 +7,19 @@ class Loader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white.withOpacity(0.7),
+      backgroundColor: RoutineCheckAppColors.tertiary,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(
             child: SizedBox(
-                width: screenAwareSize(40, context),
-                height: screenAwareSize(40, context),
+                width: 50,
+                height: 50,
                 child: CircularProgressIndicator(
                   strokeWidth: 8,
                   backgroundColor: Colors.green,
                   valueColor: AlwaysStoppedAnimation<Color>(
-                      AppColors.backgroundColors()),
+                      Theme.of(context).primaryColor),
                 )),
           ),
         ],

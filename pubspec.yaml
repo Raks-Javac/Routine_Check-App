@@ -1,12 +1,12 @@
 name: estate_project
-description: A simple app made with flutter 
+description: A simple routine checker app made with dart(flutter)
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=2.16.0 <3.0.0"
 
 
 dependencies:
@@ -14,17 +14,29 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.2
+  # get_it for dependency injection
   get_it: ^7.2.0
+  # provider to handle state
   provider: ^6.0.1
+  # dio for network calls
   dio: ^4.0.4
+  # flutter_dotenv for environemtn variables
   flutter_dotenv: ^5.0.2
+  # shared_pref for local storage
   shared_preferences: ^2.0.8
+  # to erase the flutter native white splash screen and give the app a native splash
+  flutter_native_splash: ^2.2.5
+  # used in getting the screen sized specufic to the device
+  flutter_screenutil: ^5.5.3+2
+  # since we dont have a font saved in a local directory we would be using goggle font for our app typograpgy
+  google_fonts: ^3.0.1
 
 dev_dependencies:
+  flutter_lints: ^1.0.0
   flutter_test:
     sdk: flutter
 
-  flutter_lints: ^1.0.0
+
 
 
 flutter:
