@@ -7,16 +7,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 
-class ProviderApp extends StatefulWidget {
+class ProviderMobileApp extends StatefulWidget {
   final List<SingleChildWidget> multiProvider;
   // ignore: use_key_in_widget_constructors
-  const ProviderApp(this.multiProvider);
+  const ProviderMobileApp(this.multiProvider);
 
   @override
-  _ProviderAppState createState() => _ProviderAppState();
+  _ProviderMobileAppState createState() => _ProviderMobileAppState();
 }
 
-class _ProviderAppState extends State<ProviderApp> {
+class _ProviderMobileAppState extends State<ProviderMobileApp> {
   @override
   Widget build(BuildContext context) {
     //removed the splash_screen once this widget builds on screen
@@ -33,6 +33,7 @@ class _ProviderAppState extends State<ProviderApp> {
               color: RoutineCheckAppColors.primary,
               onGenerateRoute: AppRouter.generateRoutes,
               navigatorKey: AppNavigator.key,
+              initialRoute: splashScreen,
               title: StringsStore.kAppName,
               theme: RoutineCheckThemeData.lightTheme,
               darkTheme: RoutineCheckThemeData.darkTheme,

@@ -1,5 +1,5 @@
 import 'package:estate_project/src/core/base/base_view_model/b_vm.dart';
-import 'package:estate_project/src/core/utils/constants.dart';
+import 'package:estate_project/src/shared/res/res.dart';
 import 'package:estate_project/src/shared/widgets/loaders/loading_screens.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -30,7 +30,7 @@ class _BaseViewState<T extends BaseViewModel> extends State<BaseView<T>> {
           BuildContext context, T viewModel, Widget? child) =>
       !viewModel.isInitialized && viewModel.isLoading == true
           ? Container(
-              color: ColorsTexStyleStore.kTriviaScaffoldBackground,
+              color: RoutineCheckAppColors.tertiary,
               child: const Center(child: Loader()))
           : Stack(
               children: [

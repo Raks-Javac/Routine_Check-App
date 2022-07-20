@@ -12,5 +12,5 @@ void main() async {
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   setupLocator();
-  runApp(ProviderApp(allProviders));
+  runApp(ProviderMobileApp(allProviders));
 }

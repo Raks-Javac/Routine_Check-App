@@ -1,7 +1,7 @@
 
 // stores strings
 class StringsStore {
-  static const String kAppName = "Fluutter Template";
+  static const String kAppName = "Routine Checker";
 
   String emptyEmailField({String? fieldType = "Email"}) =>
       '$fieldType field cannot be empty!';
