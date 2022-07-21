@@ -1,4 +1,6 @@
 import 'dart:io' show Platform;
+import 'package:estate_project/src/features/home/presentation/views/home_screen.dart';
+import 'package:estate_project/src/features/routines/create/presentation/views/create_screen.dart';
 import 'package:estate_project/src/features/splash_onboarding/presentation/splash_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -13,11 +15,16 @@ abstract class AppRouter {
           view: const SplashScreen(),
         );
 
-      // case registerRoute:
-      //   return getPageRoute(
-      //     settings: settings,
-      //     view: const RegisterScreen(),
-      //   );
+      case homeScreen:
+        return getPageRoute(
+          settings: settings,
+          view: const HomeScreen(),
+        );
+         case createScreen:
+        return getPageRoute(
+          settings: settings,
+          view: const CreateScreen(),
+        );
       default:
         return getPageRoute(
           settings: settings,

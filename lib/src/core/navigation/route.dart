@@ -4,3 +4,4 @@
 /// ``` const String *viewName*ViewRoute = 'unique_route_name';  ```
 const String splashScreen = '/splash';
 const String homeScreen = '/home';
+const String createScreen = '/create';

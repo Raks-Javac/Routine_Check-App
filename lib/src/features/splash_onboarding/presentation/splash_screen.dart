@@ -14,15 +14,14 @@ class SplashScreen extends StatelessWidget {
 
   Widget _buildScreen(BuildContext context, SplashScreenProvider viewModel) {
     return Scaffold(
-      body: Column(
-        children: [
-          Center(
-            child: TextButton.icon(
-                onPressed: viewModel.startLoadingAndNavigateToNext,
-                icon: const Icon(Icons.play_arrow_rounded),
-                label: const Text("Start loading")),
-          ),
-        ],
+      body: Center(
+        child: TextButton.icon(
+            onPressed: viewModel.startLoadingAndNavigateToNext,
+            icon: const Icon(Icons.play_arrow_rounded),
+            label: Text(
+              "",
+              style: Theme.of(context).textTheme.bodySmall,
+            )),
       ),
     );
   }

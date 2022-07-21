@@ -6,16 +6,16 @@ class Storage {
   /// Get string value
   /// Argument [key]
   Future<String?> getString(key) async {
-    Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
-    final SharedPreferences prefs = await _prefs;
-    String? _res = prefs.getString("$key");
-    return _res;
+    Future<SharedPreferences> prefsInstance = SharedPreferences.getInstance();
+    final SharedPreferences prefs = await prefsInstance;
+    String? res = prefs.getString("$key");
+    return res;
   }
 
   //remove
   dynamic removeJson(key) async {
-    Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
-    final SharedPreferences prefs = await _prefs;
+    Future<SharedPreferences> prefsInstance = SharedPreferences.getInstance();
+    final SharedPreferences prefs = await prefsInstance;
     prefs.remove("$key");
   }
 
@@ -23,36 +23,36 @@ class Storage {
   /// Use import 'dart:convert'; for jsonEncode
   /// Argument [key]
   dynamic getJson(key) async {
-    Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
-    final SharedPreferences prefs = await _prefs;
+    Future<SharedPreferences> prefsInstance = SharedPreferences.getInstance();
+    final SharedPreferences prefs = await prefsInstance;
     String? jsonString = prefs.getString("$key");
-    var _res = jsonDecode(jsonString!);
-    return _res;
+    var res = jsonDecode(jsonString!);
+    return res;
   }
 
   /// Adding a string value
   Future<bool> putString(key, val) async {
-    Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
-    final SharedPreferences prefs = await _prefs;
-    var _res = prefs.setString("$key", val);
-    return _res;
+    Future<SharedPreferences> prefsInstance = SharedPreferences.getInstance();
+    final SharedPreferences prefs = await prefsInstance;
+    var res = prefs.setString("$key", val);
+    return res;
   }
 
   /// Adding a list or object
   /// Use import 'dart:convert'; for jsonEncode
   dynamic putJson(key, val) async {
-    Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
-    final SharedPreferences prefs = await _prefs;
+    Future<SharedPreferences> prefsInstance = SharedPreferences.getInstance();
+    final SharedPreferences prefs = await prefsInstance;
     var valString = jsonEncode(val);
-    var _res = prefs.setString("$key", valString);
-    return _res;
+    var res = prefs.setString("$key", valString);
+    return res;
   }
 
   dynamic clearPref() async {
-    Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
-    final SharedPreferences prefs = await _prefs;
+    Future<SharedPreferences> prefsInstance = SharedPreferences.getInstance();
+    final SharedPreferences prefs = await prefsInstance;
 
-    var _res = prefs.clear();
-    return _res;
+    var res = prefs.clear();
+    return res;
   }
 }

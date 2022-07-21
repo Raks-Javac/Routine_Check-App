@@ -12,7 +12,7 @@ class RoutineCheckAppDecorators {
   static InputBorder get defaultLightBorder => OutlineInputBorder(
         borderRadius: BorderRadius.circular(6),
         borderSide: BorderSide(
-          color:RoutineCheckAppColors.grey60,
+          color: RoutineCheckAppColors.grey60,
         ),
       );
 
@@ -79,7 +79,7 @@ class RoutineCheckAppDecorators {
   static InputBorder get disabledDarkBorder => OutlineInputBorder(
         borderRadius: BorderRadius.circular(6),
         borderSide: BorderSide(
-          color:RoutineCheckAppColors.grey60,
+          color: RoutineCheckAppColors.grey60,
           width: 0,
         ),
       );
@@ -87,5 +87,19 @@ class RoutineCheckAppDecorators {
   static InputBorder get focusedErrorDarkBorder => OutlineInputBorder(
         borderRadius: BorderRadius.circular(6),
         borderSide: BorderSide(color: RoutineCheckAppColors.error),
+      );
+
+  static Decoration get tabBackground => BoxDecoration(
+        color: RoutineCheckAppColors.grey10,
+        borderRadius: BorderRadius.circular(
+          10.0,
+        ),
+      );
+
+  static Decoration get tabHomeIndicatorDecoration => BoxDecoration(
+        borderRadius: BorderRadius.circular(
+          10.0,
+        ),
+        color: RoutineCheckAppColors.primary,
       );
 }
