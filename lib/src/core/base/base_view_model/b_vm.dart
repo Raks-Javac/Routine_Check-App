@@ -18,6 +18,9 @@ abstract class BaseViewModel extends ChangeNotifier {
 
   FutureOr<void> _initState;
 
+
+
+
   BaseViewModel() {
     SchedulerBinding.instance.addPostFrameCallback((_) {
       //after displaying the frames on schedule we want to run our init function
