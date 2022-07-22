@@ -6,6 +6,7 @@ import 'dart:developer';
 import 'package:estate_project/src/core/base/base_view_model/b_vm.dart';
 import 'package:estate_project/src/core/database/box_keys.dart';
 import 'package:estate_project/src/core/database/routinedb.dart';
+import 'package:estate_project/src/utils/functions.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 //indirectly all your view models that want to use the hive service can extend the hive service viewmodel and overwrite in certain flow
@@ -15,6 +16,8 @@ class HiveService extends BaseViewModel {
   @override
   FutureOr<void> initState() async {
     log("instantiating --->>> hive service");
+    String hi = getFirstCharactersOfRoutine("Table Cut");
+    logConsole(hi);
   }
 
   @override
