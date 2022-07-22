@@ -1,12 +1,12 @@
 # 🔥🔥 Flutter  Routine Checker App Concept 
-[![Twitter Follow](https://twitter.com/khuduzr)
+
 
 
 
 Star⭐ the repo if you like what you see😉.
 
 
-[![Twitter Follow](https://twitter.com/khuduzr)
+
 
 ## ✨ Requirements
 * Any Operating System (ie. MacOS X, Linux, Windows)
