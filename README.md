@@ -1,12 +1,12 @@
 # 🔥🔥 Flutter  Routine Checker App Concept 
-[![Twitter Follow](https://img.shields.io/twitter/follow/mastersam_.svg?style=social)](https://twitter.com/khuduzr)
+[![Twitter Follow](https://twitter.com/khuduzr)
 
 
 
 Star⭐ the repo if you like what you see😉.
 
 
-[![Twitter Follow](https://img.shields.io/twitter/follow/mastersam_.svg?style=social)](https://twitter.com/khuduzr)
+[![Twitter Follow](https://twitter.com/khuduzr)
 
 ## ✨ Requirements
 * Any Operating System (ie. MacOS X, Linux, Windows)
@@ -27,16 +27,16 @@ flutter run -v
 
 - Android 
 
-'''
+
 flutter build apk -v
-'''
+
 
 - iOS 
 
-'''
+
 flutter build ipa -v
-'''
+
 
 
 ## 🤓 Author(s)
-**Rufai Kudus** [![Twitter Follow](https://img.shields.io/twitter/follow/mastersam_.svg?style=social)](https://twitter.com/khuduzr)
+**Rufai Kudus** (https://twitter.com/khuduzr)
