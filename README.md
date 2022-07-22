@@ -15,5 +15,28 @@ Star⭐ the repo if you like what you see😉.
 * A brain to think 🤓🤓
 
 
+## ✨ Run project
+
+'''
+flutter run -v
+'''
+
+
+
+## ✨ Installation
+
+- Android 
+
+'''
+flutter build apk -v
+'''
+
+- iOS 
+
+'''
+flutter build ipa -v
+'''
+
+
 ## 🤓 Author(s)
 **Rufai Kudus** [![Twitter Follow](https://img.shields.io/twitter/follow/mastersam_.svg?style=social)](https://twitter.com/khuduzr)
