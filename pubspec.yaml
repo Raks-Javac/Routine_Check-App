@@ -30,11 +30,17 @@ dependencies:
   flutter_screenutil: ^5.5.3+2
   # since we dont have a font saved in a local directory we would be using goggle font for our app typograpgy
   google_fonts: ^3.0.1
+  # the official hive package
+  hive: ^2.0.5
+  hive_flutter: ^1.1.0
+  # a dependency to the hive package
 
 dev_dependencies:
   flutter_lints: ^2.0.1
   flutter_test:
     sdk: flutter
+  hive_generator: ^1.1.1
+  build_runner: ^2.1.7
 
 
 
