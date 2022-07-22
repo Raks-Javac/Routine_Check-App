@@ -15,8 +15,6 @@ class HiveService extends BaseViewModel {
   @override
   FutureOr<void> initState() async {
     log("instantiating --->>> hive service");
-    routineDbList = await getRoutineItems();
-    notifyListeners();
   }
 
   @override
@@ -44,7 +42,6 @@ class HiveService extends BaseViewModel {
   Future<List<RoutineDb>> getRoutineItems() async {
     Box<RoutineDb> box = await Hive.openBox<RoutineDb>(routineDbBoxKeys);
     routineDbList = box.values.toList();
-    notifyListeners();
     return routineDbList;
   }
 

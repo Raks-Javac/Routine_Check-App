@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'package:estate_project/src/core/database/routinedb.dart';
 import 'package:estate_project/src/core/navigation/navigator.dart';
 import 'package:estate_project/src/features/routines/overview/presentation/providers/overview_provider.dart';
 import 'package:estate_project/src/features/routines/overview/presentation/widgets/widgets.dart';
@@ -20,28 +21,34 @@ class OverViewScreen extends StatelessWidget {
 
   Widget _buildScreen(BuildContext context, OverViewProvider overviewModel) {
     log("ref database list ->>  ${overviewModel.routineDbList.length}");
-    return (overviewModel.routineDbList.isNotEmpty)
-        ? Container(
-            margin: EdgeInsets.symmetric(horizontal: 10.w, vertical: 20.h),
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  for (int i = 0; i < overviewModel.routineDbList.length; i++)
-                    RoutineTile(
-                      routinIsEditable: true,
-                      editFunction: () {
-                        AppNavigator.pushNamed(
-                          editScreen,
-                          arguments: overviewModel.routineDbList[i],
-                        );
-                      },
-                      tileSubTitle: '',
-                      titleString: '',
-                    ),
-                ],
+    return FutureBuilder<List<RoutineDb>>(
+        future: overviewModel.getRoutineItems(),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            return Container(
+              margin: EdgeInsets.symmetric(horizontal: 10.w, vertical: 20.h),
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    for (int i = 0; i < overviewModel.routineDbList.length; i++)
+                      RoutineTile(
+                        routinIsEditable: true,
+                        editFunction: () {
+                          AppNavigator.pushNamed(
+                            editScreen,
+                            arguments: overviewModel.routineDbList[i],
+                          );
+                        },
+                        tileSubTitle: '',
+                        titleString: '',
+                      ),
+                  ],
+                ),
               ),
-            ),
-          )
-        : const NoRoutinePlaceHolder();
+            );
+          } else {
+            return const NoRoutinePlaceHolder();
+          }
+        });
   }
 }
