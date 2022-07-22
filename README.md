@@ -17,9 +17,9 @@ Star⭐ the repo if you like what you see😉.
 
 ## ✨ Run project
 
-'''
+
 flutter run -v
-'''
+
 
 
 
