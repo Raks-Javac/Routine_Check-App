@@ -24,7 +24,7 @@ abstract class AppRouter {
       case createScreen:
         return getPageRoute(
           settings: settings,
-          view: const CreateScreen(),
+          view: CreateScreen(),
         );
       case editScreen:
         return getPageRoute(

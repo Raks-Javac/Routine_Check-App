@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:estate_project/src/features/home/domain/domain_models.dart';
 import 'package:estate_project/src/shared/widgets/buttons/button.dart';
 import 'package:estate_project/src/shared/widgets/reusable_app_bar/reusable_app_bar.dart';
@@ -11,7 +10,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../shared/res/res.dart';
 
 class CreateScreen extends StatelessWidget {
-  const CreateScreen({Key? key}) : super(key: key);
+  CreateScreen({Key? key}) : super(key: key);
+
+  final TextEditingController createDescription = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -51,6 +52,7 @@ class CreateScreen extends StatelessWidget {
                 addVerticalSpacing(20.h),
                 TextAreaFormFieldWidget(
                     label: "Routine description",
+                    controller: createDescription,
                     validator: (val) {
                       return "";
                     }),

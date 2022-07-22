@@ -6,9 +6,15 @@ class TextAreaFormFieldWidget extends StatelessWidget {
   final String? hintText;
   final String Function(String?)? validator;
   final String Function(String?)? onChange;
+  final TextEditingController controller;
 
   const TextAreaFormFieldWidget(
-      {Key? key, this.label, this.hintText, this.validator, this.onChange})
+      {Key? key,
+      this.label,
+      this.hintText,
+      this.validator,
+      this.onChange,
+      required this.controller})
       : super(key: key);
 
   @override
@@ -26,6 +32,7 @@ class TextAreaFormFieldWidget extends StatelessWidget {
         const SizedBox(height: 3.0),
         SizedBox(
           child: TextFormField(
+            controller: controller,
             cursorColor: RoutineCheckAppColors.primary,
             minLines: 4,
             maxLines: null,
