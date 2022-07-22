@@ -18,12 +18,15 @@ class TextAreaFormFieldWidget extends StatelessWidget {
       children: [
         Text(
           label!,
-          style: Theme.of(context).textTheme.titleSmall,
+          style: Theme.of(context)
+              .textTheme
+              .bodyMedium
+              ?.copyWith(fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 3.0),
         SizedBox(
           child: TextFormField(
-            cursorColor: Colors.black26,
+            cursorColor: RoutineCheckAppColors.primary,
             minLines: 4,
             maxLines: null,
             style: Theme.of(context).textTheme.bodyMedium,
@@ -38,8 +41,8 @@ class TextAreaFormFieldWidget extends StatelessWidget {
                         color: RoutineCheckAppColors.primary, width: 1.5),
                     borderRadius:
                         const BorderRadius.all(Radius.circular(5.0)))),
-            validator: validator!,
-            onChanged: onChange!,
+            validator: (String? val) => validator!(val!),
+            onChanged: (String? val) => onChange!(val!),
           ),
         )
       ],

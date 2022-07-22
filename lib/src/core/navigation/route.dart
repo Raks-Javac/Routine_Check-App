@@ -5,3 +5,4 @@
 const String splashScreen = '/splash';
 const String homeScreen = '/home';
 const String createScreen = '/create';
+const String editScreen = '/edit';

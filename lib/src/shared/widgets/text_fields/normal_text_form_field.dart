@@ -38,9 +38,12 @@ class NormalFormFieldWidget extends StatelessWidget {
       children: [
         Text(
           label ?? "",
-          style: Theme.of(context).textTheme.labelMedium,
+          style: Theme.of(context)
+              .textTheme
+              .bodyMedium
+              ?.copyWith(fontWeight: FontWeight.bold),
         ),
-        const SizedBox(height: 3.0),
+        const SizedBox(height: 4.0),
         SizedBox(
           // height: maxLength != null ? 9.h : 7.h,
           width: mq.width,
@@ -57,7 +60,7 @@ class NormalFormFieldWidget extends StatelessWidget {
             maxLengthEnforcement: MaxLengthEnforcement.enforced,
             autovalidateMode: AutovalidateMode.onUserInteraction,
             validator: validator,
-            style: Theme.of(context).textTheme.titleSmall,
+            style: Theme.of(context).textTheme.bodyMedium,
             readOnly: shouldReadOnly,
             decoration: InputDecoration(
                 counterText: "",

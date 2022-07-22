@@ -4,6 +4,7 @@ import 'package:estate_project/src/features/routines/create/presentation/views/c
 import 'package:estate_project/src/features/splash_onboarding/presentation/splash_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import '../../features/routines/edit/presentation/views/edit_screen.dart';
 import 'route.dart';
 
 abstract class AppRouter {
@@ -20,11 +21,17 @@ abstract class AppRouter {
           settings: settings,
           view: const HomeScreen(),
         );
-         case createScreen:
+      case createScreen:
         return getPageRoute(
           settings: settings,
           view: const CreateScreen(),
         );
+      case editScreen:
+        return getPageRoute(
+          settings: settings,
+          view: EditScreenPerRoutine(),
+        );
+
       default:
         return getPageRoute(
           settings: settings,

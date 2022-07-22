@@ -7,15 +7,9 @@ class SplashScreenProvider extends BaseViewModel {
   final BuildContext? context;
   SplashScreenProvider({this.context});
 
-  startLoadingAndNavigateToNext() {
-    changeLoaderStatus(true);
-    Future.delayed(const Duration(seconds: 4), () {
-      changeLoaderStatus(false);
-    });
-  }
 
   _navigateHomeAfterSplash() {
-    Future.delayed(const Duration(seconds: 4), () {
+    return Future.delayed(const Duration(seconds: 4), () {
       AppNavigator.pushNamedAndClear(homeScreen);
     });
   }

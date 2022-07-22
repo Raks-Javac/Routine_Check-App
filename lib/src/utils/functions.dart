@@ -11,3 +11,15 @@ void closeTextFieldFocus(BuildContext context) {
   }
   currentFocus.unfocus();
 }
+
+SizedBox addVerticalSpacing(double height) {
+  return SizedBox(
+    height: height,
+  );
+}
+
+SizedBox addHorizontalSpacing(double width) {
+  return SizedBox(
+    width: width,
+  );
+}
