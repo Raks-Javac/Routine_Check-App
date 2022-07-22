@@ -1,5 +1,6 @@
 import 'package:estate_project/src/core/database/db_service.dart';
 import 'package:estate_project/src/core/database/routinedb.dart';
+import 'package:estate_project/src/core/database/timeOfDayObject.g.dart';
 import 'package:estate_project/src/features/splash_onboarding/presentation/providers/view_model.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -12,6 +13,7 @@ Future setupLocator() async {
   //registered the hive database and adapters
   await Hive.initFlutter();
   Hive.registerAdapter(RoutineDbAdapter());
+  Hive.registerAdapter(TimeOfDayAdapter());
 //register your class and singletons here
   getIt.registerLazySingleton(() => SplashScreenProvider());
 }

@@ -11,6 +11,6 @@ void main() async {
   // await dotenv.load(fileName: '.env');
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
-  setupLocator();
+  await setupLocator();
   runApp(ProviderMobileApp(allProviders));
 }

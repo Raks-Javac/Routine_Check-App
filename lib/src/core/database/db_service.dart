@@ -13,8 +13,10 @@ import 'package:hive_flutter/hive_flutter.dart';
 
 class HiveService extends BaseViewModel {
   @override
-  FutureOr<void> initState() {
+  FutureOr<void> initState() async {
     log("instantiating --->>> hive service");
+    routineDbList = await getRoutineItems();
+    notifyListeners();
   }
 
   @override
@@ -30,6 +32,7 @@ class HiveService extends BaseViewModel {
 
   // Create new routine of the routineDb model
   Future<void> createARoutine(RoutineDb routineDb) async {
+    log("ref creating a routine of title =>>> ${routineDb.title}");
     Box<RoutineDb> box = await Hive.openBox<RoutineDb>(routineDbBoxKeys);
     await box.add(routineDb);
     routineDbList.add(routineDb);

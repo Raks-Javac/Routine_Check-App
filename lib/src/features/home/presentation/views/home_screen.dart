@@ -1,10 +1,14 @@
+import 'package:estate_project/src/core/database/routinedb.dart';
 import 'package:estate_project/src/core/navigation/navigator.dart';
 import 'package:estate_project/src/features/home/domain/domain_models.dart';
+import 'package:estate_project/src/features/home/presentation/providers/home_provider.dart';
 import 'package:estate_project/src/features/home/presentation/widgets/widgets.dart';
 import 'package:estate_project/src/shared/res/res.dart';
 import 'package:estate_project/src/shared/widgets/reusable_app_bar/reusable_app_bar.dart';
 import 'package:estate_project/src/utils/functions.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../core/base/base_view/b_view.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -25,6 +29,13 @@ class _HomeScreenState extends State<HomeScreen>
 
   @override
   Widget build(BuildContext context) {
+    return BaseView<HomeProvider>(
+      vmBuilder: (context) => HomeProvider(context: context),
+      builder: _buildScreen,
+    );
+  }
+
+  Widget _buildScreen(BuildContext context, HomeProvider homeViewModel) {
     return GestureDetector(
       onTap: () => closeTextFieldFocus(context),
       child: Scaffold(
@@ -78,7 +89,15 @@ class _HomeScreenState extends State<HomeScreen>
             ),
           ),
           floatingActionButton: CreateTaskFloatingButton(
-            onPressed: () {
+            onPressed: () async {
+              RoutineDb routineDbModel = RoutineDb(
+                  title: "First Routine",
+                  description: "Would love to get started",
+                  missed: false,
+                  done: false,
+                  routimeDate: DateTime.now(),
+                  routineTime: const TimeOfDay(minute: 20, hour: 20));
+              await homeViewModel.createARoutine(routineDbModel);
               AppNavigator.pushNamed(createScreen, arguments: routineCategory);
             },
           )),

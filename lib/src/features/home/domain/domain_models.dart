@@ -10,7 +10,8 @@ class RoutineCategory {
 }
 
 List<RoutineCategory> routineCategory = [
-  RoutineCategory(categoryLabel: "Overview", categoryScreens: OverViewScreen()),
+  RoutineCategory(
+      categoryLabel: "Overview", categoryScreens: const OverViewScreen()),
   RoutineCategory(
     categoryLabel: "Done",
     categoryScreens: DoneSceen(),
