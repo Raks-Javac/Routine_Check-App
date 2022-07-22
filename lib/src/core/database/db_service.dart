@@ -2,6 +2,7 @@
 
 import 'dart:async';
 import 'dart:collection';
+import 'dart:developer';
 import 'package:estate_project/src/core/base/base_view_model/b_vm.dart';
 import 'package:estate_project/src/core/database/box_keys.dart';
 import 'package:estate_project/src/core/database/routinedb.dart';
@@ -12,7 +13,10 @@ import 'package:hive_flutter/hive_flutter.dart';
 
 class HiveService extends BaseViewModel {
   @override
-  FutureOr<void> initState() {}
+  FutureOr<void> initState() {
+    log("instantiating --->>> hive service");
+  }
+
   @override
   FutureOr<void> disposeState() async {
     //close the hive box after the hive box have been dispose
@@ -33,9 +37,18 @@ class HiveService extends BaseViewModel {
     notifyListeners();
   }
 
-  // Get notes
-  Future<void> getRoutineItems() async {
+  // Get a list of routineDb model in the database
+  Future<List<RoutineDb>> getRoutineItems() async {
     Box<RoutineDb> box = await Hive.openBox<RoutineDb>(routineDbBoxKeys);
+    routineDbList = box.values.toList();
+    notifyListeners();
+    return routineDbList;
+  }
+
+  // remove a routinebd model based on the key in the database
+  Future<void> addItem(RoutineDb routineDb) async {
+    Box<RoutineDb> box = await Hive.openBox<RoutineDb>(routineDbBoxKeys);
+    await box.delete(routineDb.key);
     routineDbList = box.values.toList();
     notifyListeners();
   }
