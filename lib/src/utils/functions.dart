@@ -26,5 +26,11 @@ SizedBox addHorizontalSpacing(double width) {
 
 String getFirstCharactersOfRoutine(String value) {
   List<String>? routineValue = value.split(" ");
-  return "${routineValue[0][0]}${routineValue[1][0]}".toUpperCase();
+  if (routineValue.isEmpty ||
+      routineValue[0].isEmpty ||
+      routineValue[1].isEmpty) {
+    return "";
+  } else {
+    return "${routineValue[0][0]}${routineValue[1][0]}".toUpperCase();
+  }
 }

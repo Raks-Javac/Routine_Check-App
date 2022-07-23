@@ -14,10 +14,10 @@ List<RoutineCategory> routineCategory = [
       categoryLabel: "Overview", categoryScreens: const OverViewScreen()),
   RoutineCategory(
     categoryLabel: "Done",
-    categoryScreens: DoneSceen(),
+    categoryScreens: const DoneSceen(),
   ),
   RoutineCategory(
     categoryLabel: "Missed",
-    categoryScreens: MissedScreen(),
+    categoryScreens: const MissedScreen(),
   ),
 ];

@@ -1,3 +1,4 @@
+import 'package:estate_project/src/utils/functions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../res/res.dart';
@@ -8,7 +9,11 @@ class RoutineTile extends StatelessWidget {
   final String tileSubTitle;
   final VoidCallback editFunction;
   const RoutineTile(
-      {Key? key, required this.routinIsEditable, required this.editFunction, required this.titleString, required this.tileSubTitle})
+      {Key? key,
+      required this.routinIsEditable,
+      required this.editFunction,
+      required this.titleString,
+      required this.tileSubTitle})
       : super(key: key);
 
   @override
@@ -18,18 +23,18 @@ class RoutineTile extends StatelessWidget {
       child: Card(
         color: RoutineCheckAppColors.tertiary,
         child: ListTile(
-          leading: const CircleAvatar(
-            child: Text("CK"),
+          leading: CircleAvatar(
+            child: Text(getFirstCharactersOfRoutine(titleString)),
           ),
           title: Text(
-            "Mop the home",
+            titleString,
             style: Theme.of(context)
                 .textTheme
                 .bodySmall
                 ?.copyWith(fontSize: 17.sp),
           ),
           subtitle: Text(
-            DateTime.now().toLocal().toString(),
+            tileSubTitle.toString(),
             style: Theme.of(context)
                 .textTheme
                 .bodySmall

@@ -1,4 +1,3 @@
-import 'package:estate_project/src/core/database/routinedb.dart';
 import 'package:estate_project/src/core/navigation/navigator.dart';
 import 'package:estate_project/src/features/home/domain/domain_models.dart';
 import 'package:estate_project/src/features/home/presentation/providers/home_provider.dart';
@@ -90,14 +89,15 @@ class _HomeScreenState extends State<HomeScreen>
           ),
           floatingActionButton: CreateTaskFloatingButton(
             onPressed: () async {
-              RoutineDb routineDbModel = RoutineDb(
-                  title: "First Routine",
-                  description: "Would love to get started",
-                  missed: false,
-                  done: false,
-                  routimeDate: DateTime.now(),
-                  routineTime: const TimeOfDay(minute: 20, hour: 20));
-              await homeViewModel.createARoutine(routineDbModel);
+              // RoutineDb routineDbModel = RoutineDb(
+              //     title: "First Routin",raksjavac
+              
+              //     description: "Would love to get started later",
+              //     missed: false,
+              //     done: true,
+              //     routimeDate: DateTime.now(),
+              //     routineTime: const TimeOfDay(minute: 20, hour: 20));
+              // await homeViewModel.createARoutine(routineDbModel);
               AppNavigator.pushNamed(createScreen, arguments: routineCategory);
             },
           )),
