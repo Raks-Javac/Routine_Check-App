@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:estate_project/src/core/base/base_view/b_view.dart';
 import 'package:estate_project/src/features/routines/missed/presentation/providers/missed_provider.dart';
 import 'package:estate_project/src/shared/widgets/loaders/loading_screens.dart';
@@ -20,13 +18,13 @@ class MissedScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildScreen(BuildContext context, MissedViewModel overviewModel) {
-    log("ref database list ->>  ${overviewModel.routineDbList.length}");
-    return FutureBuilder<List<RoutineDb>>(
-        future: overviewModel.getRoutineItems(),
+  Widget _buildScreen(BuildContext context, MissedViewModel missedViewModel) {
+    return FutureBuilder<Iterable<RoutineDb>>(
+        future: missedViewModel.getMissedRoutines(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            if (overviewModel.routineDbList.isEmpty) {
+            //if the routine db list is empty
+            if (snapshot.data!.isEmpty) {
               return const NoRoutinePlaceHolder();
             }
             return Container(
@@ -34,21 +32,19 @@ class MissedScreen extends StatelessWidget {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    for (int i = 0; i < overviewModel.routineDbList.length; i++)
+                    for (var missedItem in snapshot.data!)
                       RoutineTile(
                         routinIsEditable: false,
                         editFunction: () {},
                         tileSubTitle:
                             DateTimeFormatter.formatDateTimeToNormalString(
-                                overviewModel.routineDbList[i].routimeDate),
-                        titleString: snapshot.data![i].title,
+                                missedItem.routimeDate),
+                        titleString: missedItem.title,
                       ),
                   ],
                 ),
               ),
             );
-//if the routine db list is empty
-
           } else {
             return const Loader();
           }
